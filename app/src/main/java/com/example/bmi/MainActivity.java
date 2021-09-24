@@ -33,6 +33,32 @@ public class MainActivity extends AppCompatActivity {
             height /= 100.0d;
 
             double BMI = Math.round((weight / Math.pow(height,2))*100d)/100.0d;
+
+            if(BMI < 16) {
+                scoreObj.setText(BMI + " - wygłodzenie!!!");
+            }
+            else if(BMI < 17) {
+                scoreObj.setText(BMI + " - wychudzenie!!");
+            }
+            else if(BMI < 18.5) {
+                scoreObj.setText(BMI + " - niedowaga!");
+            }
+            else if(BMI < 25) {
+                scoreObj.setText(BMI + " - wartość prawidłowa");
+            }
+            else if(BMI < 30) {
+                scoreObj.setText(BMI + " - nadwaga!");
+            }
+            else if(BMI < 35) {
+                scoreObj.setText(BMI + " - I stopień otyłości!");
+            }
+            else if(BMI < 40) {
+                scoreObj.setText(BMI + " - II stopień otyłości!!");
+            }
+            else {
+                scoreObj.setText(BMI + " - III otyłość skrajna!!");
+            }
+
         } catch (NumberFormatException e) {
             scoreObj.setText("Błędne dane!");
         } catch (Exception e) {
